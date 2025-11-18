@@ -7,15 +7,15 @@
 # server process.
 
 # Basic Site Settings
-locale                   : "en-US"
+locale                   : "zh-CN"
 site_theme               : "default" # Currently available options are "default", "air"
 title                    : "谢志昂 / 个人主页"
 title_separator          : "-"
 name                     : &name "谢志昂"
 description              : &description "谢志昂的学术主页"
-url                      : https://academicpages.github.io # 如需，后续可改为你的实际域名
+url                      : https://YMI33.github.io
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "academicpages/academicpages.github.io"
+repository               : "YMI33/YMI33.github.io"
 
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
@@ -25,7 +25,7 @@ author:
   avatar           : "profile.png"
   name             : "谢志昂"
   pronouns         : 
-  bio              : "研究聚焦地形与冰盖的气候效应。硕士阶段研究副热带地形青藏高原对季风的影响；博士与博后阶段扩展至高纬度冰盖，独立开发并应用中等复杂度地球系统模式 GREB‑ISM 的冰盖模块用于古气候模拟；提出“冰盖斜坡热力作用”及其动力学机制。在 GRL、GMD、JGR: Atmospheres 等期刊发表论文 12 篇（一作/通讯 7 篇）。教育部第一批博士后海外引才专项引进人才获得者，主持在研国自然青年基金与博士后面上基金，并参与 CAS‑ESM3.0 冰盖模块耦合开发。"
+  bio              : "我喜欢望天，不仅因为我的专业，也因为天的渺远"
   location         : "深圳, 中国"
   employer         : "南方科技大学（博士后）"
   uri              : 
