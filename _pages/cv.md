@@ -9,16 +9,6 @@ redirect_from:
 
 {% include base_path %}
 
-基本信息
-======
-- 姓名：谢志昂
-- 性别：男
-- 民族：汉
-- 婚姻状况：已婚
-- 出生年月：1991年1月
-- Email：xieza@sustech.edu.cn
-- Phone：(+86) 13868427182
-
 教育背景
 ======
 - 2019–2022 大气科学博士，Monash University（澳大利亚）
@@ -38,7 +28,7 @@ redirect_from:
 - 国家自然科学基金委，青年科学基金项目：末次冰盛期大型冰盖的斜坡热力作用及其对周边大气环流的影响，30 万元，项目负责人，在研
 - 中国博士后科学基金会，第 74 批面上资助：第四纪晚期冰消期北半球冰盖的时空演变模拟研究，8 万元，项目负责人，在研
 
-Publications
+<!-- Publications
 ======
   <ul>{% for post in site.publications reversed %}
     {% include archive-single-cv.html %}
@@ -55,7 +45,4 @@ Teaching
   <ul>{% for post in site.teaching reversed %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+   -->
