@@ -1,18 +1,10 @@
 # Authors
 
-Name Name:
-  name        : "Name Name"
-  uri         : "https://name.com"
-  email       : "name@name.com"
-  bio         : "This is the first name."
-  avatar      : "bio-photo-2.jpg"
-  twitter     : "name"
-  google_plus : "Name"
-
-Name2 Name2:
-  name        : "Name2 Name2"
-  email       : "name2@name2.com"
-  bio         : "I ordered what?"
-  avatar      : "bio-photo.jpg"
-  twitter     : "name2"
-  google_plus : "Name"
+Zhiang Xie:
+  name        : "谢志昂"
+  uri         : "https://YMI33.github.io"
+  email       : "xieza@sustech.edu.cn"
+  bio         : "南方科技大学博士后。研究地形与冰盖的气候效应，开发 GREB‑ISM 冰盖模块并提出“冰盖斜坡热力作用”。在 GRL、GMD、JGR: Atmospheres 等发表论文。"
+  avatar      : "profile.png"
+  github      : "YMI33"
+  researchgate: "https://www.researchgate.net/profile/Zhiang-Xie"
