@@ -1,0 +1,40 @@
+---
+layout: archive
+title: "GREB-ISM"
+permalink: /en/GREB-ISM/
+author_profile: false
+locale: en
+---
+{% capture md_block %}
+
+The **Globally Resolved Energy Balance – Ice Sheet Model v1.0 (GREB-ISM v1.0)** (Xie et al., 2022) is a fully coupled global ice-sheet–climate modeling system capable of simulating the evolution of grounded ice sheets and floating ice shelves on a global grid. The model explicitly accounts for interactions with key climate components, including surface temperature, snowfall, albedo, land–sea distribution, topography, and sea level.
+<figure style="text-align:center;">
+  <img src="{{ "/images/GREB_ISM_coupling.png" | prepend: base_path }}" alt="Schematic of the thermal slope effect of ice sheets" style="max-width:100%;height:auto;">
+  <figcaption style="text-align:center;font-size:1em;font-weight:600">GREB-ISM coupling diagram</figcaption>
+</figure>
+
+GREB-ISM is integrated with the **Globally Resolved Energy Balance climate model v2.0 (GREB v2.0)** (Dommenget & Flöter, 2011; Stassen et al., 2019), which represents the climate system using three physical layers — **atmosphere, surface, and deep ocean** — at a horizontal resolution of **3.75° × 3.75° (96 × 48 grid points)**. The GREB model also includes a simplified treatment of atmospheric water vapor based on evaporation, precipitation, and atmospheric transport. Precipitation is determined diagnostically following Stassen et al. (2019). 
+Since GREB-ISM is a fast and efficient model, it is a suitable tool for paleoclimate simulation.
+
+The ice-sheet module of GREB-ISM is a three-dimensional model with **four vertical layers**, using the **shallow-ice approximation (SIA)** for grounded ice and the **shallow-shelf approximation (SSA)** with constant viscosity for floating ice shelves. Surface melt rates are computed from the surface energy balance provided by GREB v2.0. Together, these components enable GREB-ISM to efficiently simulate long-timescale ice-sheet evolution and climate feedbacks on global scales.
+
+<figure style="text-align:center;">
+  <img src="{{ "/images/ISM_diagram.png" | prepend: base_path }}" alt="Schematic of the thermal slope effect of ice sheets" style="max-width:100%;height:auto;">
+  <figcaption style="text-align:center;font-size:1em;font-weight:600">GREB-ISM ice sheet model diagram</figcaption>
+</figure>
+
+## Useful links
+- [GREB-ISM](https://github.com/YMI33/GREB-ISM)
+- [Monash Simple Climate Model(MSCM)/GREB](https://users.monash.edu.au/%7Edietmard/content/GREB/GREB_model.html)
+- [MSCM UI](https://mscm.dkrz.de/)
+
+
+## References
+
+- Xie, Z., Dommenget, D., McCormack, F. S., & Mackintosh, A. N. (2022). GREB-ISM v1.0: A coupled ice sheet model for the Globally Resolved Energy Balance model for global simulations on timescales of 100\,kyr. Geoscientific Model Development, 15(9), 3691–3719. https://doi.org/10.5194/gmd-15-3691-2022
+- Dommenget, D., & Flöter, J. (2011). Conceptual understanding of climate change with a globally resolved energy balance model. Climate Dynamics, 37(11–12), 2143–2165. https://doi.org/10.1007/s00382-011-1026-0
+- Stassen, C., Dommenget, D., & Loveday, N. (2019). A hydrological cycle model for the Globally Resolved Energy Balance (GREB) model v1.0. Geoscientific Model Development, 12(1), 425–440. https://doi.org/10.5194/gmd-12-425-2019
+{% endcapture %}
+{{ md_block | markdownify }}
+
+

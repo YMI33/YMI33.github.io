@@ -10,11 +10,20 @@
 main:
   - title: "简历"
     url: /cv/
-
   - title: "论文"
     url: /publications/
-
-
   - title: "教学"
-    url: /teaching/    
+    url: /teaching/
+  - title: "GREB‑ISM"
+    url: /GREB-ISM/
+
+main_en:
+  - title: "CV"
+    url: /en/cv/
+  - title: "Publications"
+    url: /en/publications/
+  - title: "Teaching"
+    url: /en/teaching/
+  - title: "GREB‑ISM"
+    url: /en/GREB-ISM/
     

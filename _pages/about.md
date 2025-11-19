@@ -1,13 +1,13 @@
 ---
 permalink: /
-title: "关于我"
+title: "欢迎来到我的学术主页"
+author: "Zhiang Xie"
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
-# 欢迎来到我的学术主页
-我目前在南方科技大学从事博士后研究，关注地形与冰盖对气候系统的多尺度影响。让我们开始一起仰望天空，讨论一些Cool topic吧！
+我目前在南方科技大学从事博士后研究，关注地形与冰盖对气候系统的多尺度影响。让我们开始一起仰望天空和高山，讨论一些cool topic吧！
 
 ## 研究内容简介
 我的研究主要围绕地形的气候效应与古气候过程，重点包括：

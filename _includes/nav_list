@@ -1,5 +1,10 @@
 {% include base_path %}
-{% assign navigation = site.data.navigation[include.nav] %}
+{% assign locale_key = page.locale | default: site.locale %}
+{% assign nav_key = include.nav | default: "main" %}
+{% if nav_key == "main" and (locale_key contains "en" or page.url contains "/en/") %}
+  {% assign nav_key = "main_en" %}
+{% endif %}
+{% assign navigation = site.data.navigation[nav_key] %}
 
 <nav class="nav__list">
   {% if page.sidebar.title %}<header><h4 class="nav__title" style="padding: 0;">{{ page.sidebar.title }}</h4></header>{% endif %}

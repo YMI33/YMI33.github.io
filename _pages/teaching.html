@@ -2,13 +2,18 @@
 layout: archive
 title: "教学"
 permalink: /teaching/
+author: "Zhiang Xie"
 author_profile: true
 ---
 
-研究生课题
+{% capture md_block %}
+# 可选研究生课题
+
 - 冰盖数值模式与CAS-ESM的耦合
-- 使用GREB-ISM进行第四纪冰盖演变模拟
+- 使用GREB-ISM进行第四纪冰盖演变及海平面变化模拟
 - Wasserstein距离在气候中应用
+{% endcapture %}
+{{ md_block | markdownify }}
 
 {% include base_path %}
 
