@@ -9,7 +9,7 @@
 # Basic Site Settings
 locale                   : "zh-CN"
 site_theme               : "default" # Currently available options are "default", "air"
-title                    : "谢志昂 (Xie Zhiang)"
+title                    : "谢志昂 / 个人主页"
 title_separator          : "-"
 name                     : &name "谢志昂"
 description              : &description "谢志昂的学术主页"
@@ -26,8 +26,8 @@ author:
   name             : "谢志昂"
   pronouns         : 
   bio              : "仰之弥高，钻之弥坚。瞻之在前，忽焉在后。"
-  location         : "深圳, 中国"
-  employer         : "南方科技大学（博士后）"
+  location         : "厦门, 中国"
+  employer         : "厦门大学（助理教授）"
   uri              : 
   email            : "xieza@sustech.edu.cn" 
 

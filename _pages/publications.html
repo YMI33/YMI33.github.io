@@ -1,13 +1,120 @@
 ---
 layout: archive
-title: "论文"
+title: "研究"
 permalink: /publications/
+author: "Zhiang Xie"
 author_profile: true
 ---
+{% include base_path %}
 
 <!-- {% if site.author.googlescholar %}
   <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
 {% endif %} -->
+
+{% capture md_block %}
+
+<!-- 移除原先的“研究兴趣”markdown段落，改为下面的自定义布局块 -->
+## 研究兴趣
+<!-- 自定义：左文右图 -->
+<div class="research-section">
+  <div class="research-content">
+    <h2>大型冰盖的气候效应与反馈机制</h2>
+    <p>
+      冰盖在地球气候系统演化中占据核心地位，其反照率、地形起伏和质量变化都会深刻影响全球与区域的气候格局。
+      在地球历史中，冰盖多次扩张与退缩，并伴随海平面、高纬海洋环流、季风系统以及全球温度场发生剧烈变化。
+      重新刻画与理解这段波澜壮阔的古气候史，是一个充满挑战且极具吸引力的科学问题。
+      如今，人类再次面对快速变暖时代，格陵兰和南极冰盖未来的融化将对全球产生怎样的长远影响？
+      回答这些问题，我们需要系统研究冰盖的气候效应与反馈过程，并借助数学与物理方法定量刻画其在地球系统中的作用机制。
+    </p>
+  </div>
+  <div class="research-image">
+    <img src="{{ "/images/SLA_diagram.png" | prepend: base_path }}" alt="研究兴趣配图">
+  </div>
+</div>
+
+
+<div class="research-section">
+  <div class="research-content">
+    <h2>冰盖数值模式及地球系统模式开发</h2>
+    <p>
+      冰盖是面积超过 5 万平方千米、可长期存在于陆地上的大型冰川体，现今主要包括格陵兰和南极冰盖，储存了地球超过70%的淡水。
+      虽然外观坚硬，但冰盖本质上是缓慢流动的黏性流体，其演化可由流体力学方程描述。
+      通过合理近似与适当的参数化方法，我们能够利用数值模型重建冰盖的运动与变化，以解释观测中冰盖的演变。
+      然而，如何选择最合适的近似？如何构建可靠的参数化方案？如何设计并耦合大气与海洋过程的边界条件（如表面和底部质量平衡）？
+      这些都是当前冰盖数值模拟的重要科学问题，我们需要持续探索与改进。
+    </p>
+  </div>
+  <div class="research-image">
+    <img src="{{ "/images/IPCC_SROCC.png" | prepend: base_path }}" alt="研究兴趣配图">
+  </div>
+</div>
+
+<div class="research-section">
+  <div class="research-content">
+    <h2>第四纪古气候数值模拟(<a href="{{ '/GREB-ISM/' | relative_url }}">GREB-ISM</a>)</h2>
+    <p>
+      虽然现代仅剩格陵兰和南极两大冰盖，但在第四纪，多个冰盖曾在北半球不断生灭，并深刻影响全球气候。
+      地质记录为我们提供了洞察古气候变化的线索，但仍存在许多未解之谜，例如冰盖演化机制及其与冰期—间冰期周期的关系。
+      为更好地理解这些问题，我们开发了第四纪古气候数值模拟框架
+      <a href="{{ '/GREB-ISM/' | relative_url }}">GREB-ISM</a>，
+      用于探究冰盖动力学与气候系统的多尺度耦合，揭示冰盖反馈过程在全球演变中的关键作用。
+      我们未来如何改进<a href="{{ '/GREB-ISM/' | relative_url }}">GREB-ISM</a>的模拟结果，如何通过它的模拟讨论冰盖和全球气候的相互作用，是一个重要的研究方向。
+    </p>
+  </div>
+  <div class="research-image">
+    <img src="{{ "/images/sea_level_comp.png" | prepend: base_path }}" alt="研究兴趣配图">
+  </div>
+</div>
+
+<div class="research-section">
+  <div class="research-content">
+    <h2>Wasserstein距离及先进数学方法在气候科学中的应用</h2>
+    <p>气候科学中许多经典统计方法存在可靠性不足、对大数据利用有限等问题。
+      随着现代应用数学的快速发展，诸多先进工具（如最优传输理论）已在其他领域展现强大能力，但在气候研究中应用仍然不足。
+      如何跨越气象学与数学的范式差异，将严谨、创新的数学方法引入气候科学，是一个有趣而且充满挑战的方向。
+      我与合作者们致力于 Wasserstein 距离在气象与气候数据中的应用，期望促进跨学科融合，为更多数学方法在气候科学中的应用提供新的思路。
+    </p>
+  </div>
+  <div class="research-image">
+    <img src="{{ "/images/AAS_WSA.png" | prepend: base_path }}" alt="研究兴趣配图">
+  </div>
+</div>
+
+<style>
+  .research-section {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    padding: 16px;
+    background: #fff;
+    margin-bottom: 20px;
+  }
+  .research-content { flex: 1; min-width: 0; }
+  .research-image { flex: 0 0 240px; }
+  .research-image img {
+    width: 240px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+  @media (max-width: 768px) {
+    .research-section { flex-direction: column; align-items: center; text-align: left; }
+    .research-image { flex: none; }
+    .research-image img { width: 70%; max-width: 280px; height: auto; }
+  }
+</style>
+
+## 课题项目
+- 2024-2029 国家重点研发计划“共享开放、自主可控地球系统模式CAS-ESM研发与应用”， 项目骨干， 在研
+- 2024-2027 国家自然科学基金委，青年科学基金项目：末次冰盛期大型冰盖的斜坡热力作用及其对周边大气环流的影响，项目负责人，在研
+- 2023-2025 中国博士后科学基金会，第 74 批面上资助：第四纪晚期冰消期北半球冰盖的时空演变模拟研究，项目负责人，结题
+
+## 出版工作
+{% endcapture %}
+{{ md_block | markdownify }}
 
 {% include base_path %}
 

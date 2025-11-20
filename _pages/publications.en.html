@@ -1,13 +1,120 @@
 ---
 layout: archive
-title: "Publications"
+title: "Research"
 author: "Zhiang Xie"
 permalink: /en/publications/
 author_profile: true
 locale: en
 ---
-
 {% include base_path %}
+
+{% capture md_block %}
+
+<!-- Left text / right image blocks -->
+<div class="research-section">
+  <div class="research-content">
+    <h2>Climatic effects and feedbacks of large ice sheets</h2>
+    <p>
+      Ice sheets play a central role in the evolution of Earth’s climate system;
+      their albedo, topographic relief, and mass changes profoundly affect global and regional climate patterns.
+      Throughout Earth’s history, ice sheets repeatedly expanded and retreated, accompanied by dramatic changes in sea level,
+      high‑latitude ocean circulation, monsoon systems, and global temperature fields.
+      Reconstructing and understanding this sweeping paleoclimate history is both challenging and compelling.
+      Today, as we again face a rapidly warming era, how will future melt of the Greenland and Antarctic ice sheets affect the globe in the long term?
+      To answer these questions, we systematically study the climatic effects and feedback processes of ice sheets and
+      use mathematical and physical methods to quantify their mechanisms within the Earth system.
+    </p>
+  </div>
+  <div class="research-image">
+    <img src="{{ "/images/SLA_diagram.png" | prepend: base_path }}" alt="Research illustration">
+  </div>
+</div>
+
+<div class="research-section">
+  <div class="research-content">
+    <h2>Ice-sheet numerical modeling and Earth system model development</h2>
+    <p>
+      Ice sheets are large glacial bodies exceeding 50,000&nbsp;km² that can persist on land; today they are primarily the Greenland and Antarctic ice sheets,
+      storing over 70% of Earth’s freshwater. Despite their rigid appearance, ice sheets are effectively slow‑moving viscous fluids whose evolution can be
+      described by fluid dynamics equations. Through appropriate approximations and parameterizations, numerical models can reconstruct ice‑sheet motion and changes
+      to explain observed evolution. Yet key questions remain: which approximations are most suitable? how to design robust parameterizations? how to specify and couple
+      boundary conditions for atmospheric and oceanic processes (e.g., surface and basal mass balance)? These are active topics in ice‑sheet modeling that require continued
+      exploration and refinement.
+    </p>
+  </div>
+  <div class="research-image">
+    <img src="{{ "/images/IPCC_SROCC.png" | prepend: base_path }}" alt="Research illustration">
+  </div>
+</div>
+
+<div class="research-section">
+  <div class="research-content">
+    <h2>Quaternary paleoclimate simulations (<a href="{{ '/en/GREB-ISM/' | relative_url }}">GREB‑ISM</a>)</h2>
+    <p>
+      Although only the Greenland and Antarctic ice sheets remain today, multiple ice sheets repeatedly waxed and waned in the Northern Hemisphere during the Quaternary,
+      profoundly influencing global climate. Geological records offer insights into paleoclimate variability, yet many puzzles remain—such as the mechanisms of ice‑sheet
+      evolution and their relation to glacial–interglacial cycles. To better understand these questions, we developed a Quaternary paleoclimate modeling framework
+      <a href="{{ '/en/GREB-ISM/' | relative_url }}">GREB‑ISM</a>, to investigate multi‑scale coupling between ice‑sheet dynamics and the climate system and to reveal
+      the key roles of ice‑sheet feedbacks in global evolution. Improving <a href="{{ '/en/GREB-ISM/' | relative_url }}">GREB‑ISM</a>and using its simulations to explore ice–climate interactions is an important direction
+      for our future work.
+    </p>
+  </div>
+  <div class="research-image">
+    <img src="{{ "/images/sea_level_comp.png" | prepend: base_path }}" alt="Research illustration">
+  </div>
+</div>
+
+<div class="research-section">
+  <div class="research-content">
+    <h2>Wasserstein distance and advanced mathematical methods in climate science</h2>
+    <p>
+      Many classical statistical methods in climate science suffer from limited reliability and under‑utilization of large datasets.
+      With rapid advances in applied mathematics, powerful tools such as optimal transport have shown strong capabilities across other fields,
+      yet remain underused in climate research. Bridging the paradigms of meteorology and mathematics to introduce rigorous, innovative methods into climate science
+      is both interesting and challenging. Together with collaborators, we explore applications of the Wasserstein distance to meteorological and climate data,
+      aiming to foster interdisciplinary integration and provide new avenues for applying mathematical methods in climate research.
+    </p>
+  </div>
+  <div class="research-image">
+    <img src="{{ "/images/AAS_WSA.png" | prepend: base_path }}" alt="Research illustration">
+  </div>
+</div>
+
+<style>
+  .research-section {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    padding: 16px;
+    background: #fff;
+    margin-bottom: 20px;
+  }
+  .research-content { flex: 1; min-width: 0; }
+  .research-image { flex: 0 0 240px; }
+  .research-image img {
+    width: 240px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+  @media (max-width: 768px) {
+    .research-section { flex-direction: column; align-items: center; text-align: left; }
+    .research-image { flex: none; }
+    .research-image img { width: 70%; max-width: 280px; height: auto; }
+  }
+</style>
+
+## Projects
+- 2024–2029 National Key R&amp;D Program of China: CAS‑ESM Development and Application — Open, Shared, and Independently Controllable Earth System Model; Core team member; Ongoing
+- 2024–2027 NSFC Young Scientists Fund: Thermal slope effects of large ice sheets during the Last Glacial Maximum and impacts on surrounding atmospheric circulation; Principal Investigator; Ongoing
+- 2023–2025 China Postdoctoral Science Foundation (74th General Grant): Simulating the spatiotemporal evolution of Northern Hemisphere ice sheets during late Quaternary deglaciation; Principal Investigator; Completed
+
+## Publications
+{% endcapture %}
+{{ md_block | markdownify }}
 
 {% if site.publication_category %}
   {% for category in site.publication_category  %}

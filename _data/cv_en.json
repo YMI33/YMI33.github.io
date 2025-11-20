@@ -1,0 +1,80 @@
+{
+  "basics": {
+    "name": "Zhiang Xie",
+    "email": "xieza@sustech.edu.cn",
+    "website": "https://academicpages.github.io",
+    "summary": "Research focuses on climatic effects of topography and ice sheets. Independently developed the GREB‑ISM ice-sheet module for paleoclimate simulations, proposing the 'thermal slope effect of ice sheets' and its dynamics.",
+    "location": {
+      "address": "",
+      "postalCode": "",
+      "city": "Shenzhen",
+      "countryCode": "CN",
+      "region": ""
+    },
+    "profiles": [
+      { "network": "Google Scholar", "username": "", "url": "https://scholar.google.com/citations?user=PS_CX0AAAAAJ" },
+      { "network": "ORCID", "username": "", "url": "https://orcid.org/yourorcidurl" },
+      { "network": "ResearchGate", "username": "", "url": "https://www.researchgate.net/profile/Zhiang-Xie" },
+      { "network": "GitHub", "username": "YMI33", "url": "https://github.com/YMI33" }
+    ]
+  },
+  "work": [
+    {
+      "company": "Southern University of Science and Technology (SUSTech)",
+      "position": "Postdoctoral Fellow",
+      "website": "",
+      "startDate": "2023",
+      "endDate": "",
+      "summary": "",
+      "highlights": []
+    }
+  ],
+  "education": [
+    {
+      "institution": "Monash University, Australia",
+      "area": "Atmospheric Sciences",
+      "studyType": "",
+      "startDate": "2019",
+      "endDate": "2022",
+      "gpa": null,
+      "courses": []
+    },
+    {
+      "institution": "Institute of Atmospheric Physics, Chinese Academy of Sciences",
+      "area": "M.Sc. Physical Oceanography",
+      "studyType": "",
+      "startDate": "2014",
+      "endDate": "2018",
+      "gpa": null,
+      "courses": []
+    },
+    {
+      "institution": "Yunnan University",
+      "area": "B.Sc. Atmospheric Sciences",
+      "studyType": "",
+      "startDate": "2010",
+      "endDate": "2014",
+      "gpa": null,
+      "courses": []
+    }
+  ],
+  "projects": [
+    {
+      "title": "NSFC Young Scientists Fund: Thermal slope effects of large ice sheets during the Last Glacial Maximum and impacts on surrounding atmospheric circulation",
+      "role": "Principal Investigator",
+      "status": "In progress",
+      "period": ""
+    },
+    {
+      "title": "China Postdoctoral Science Foundation (74th General Grant): Simulating the spatiotemporal evolution of Northern Hemisphere ice sheets during late Quaternary deglaciation",
+      "role": "Principal Investigator",
+      "status": "In progress",
+      "period": ""
+    }
+  ],
+  "honors": [
+    "First cohort awardee of the Ministry of Education Postdoctoral Global Talent Program",
+    "Guangdong Province Overseas Postdoctoral Talent",
+    "Member, Climate and Environment Committee, China Society for Industrial and Applied Mathematics"
+  ]
+}

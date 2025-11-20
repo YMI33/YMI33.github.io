@@ -8,9 +8,9 @@
 #      Markdown formatted page while the second is generated using JSON.
 
 main:
-  - title: "简历"
-    url: /cv/
-  - title: "论文"
+  - title: "团队"
+    url: /teams/
+  - title: "研究"
     url: /publications/
   - title: "教学"
     url: /teaching/
@@ -18,9 +18,9 @@ main:
     url: /GREB-ISM/
 
 main_en:
-  - title: "CV"
-    url: /en/cv/
-  - title: "Publications"
+  - title: "Teams"
+    url: /en/teams/
+  - title: "Research"
     url: /en/publications/
   - title: "Teaching"
     url: /en/teaching/

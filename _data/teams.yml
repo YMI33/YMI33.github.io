@@ -1,0 +1,15 @@
+members:
+  - id: zhiang-xie
+    name_zh: "谢志昂"
+    name_en: "Zhiang Xie"
+    role_zh: "厦门大学（助理教授）"
+    role_en: "Xiamen University (Asst. Prof.)"
+    avatar: "profile.png"
+    email: "xieza@sustech.edu.cn"
+    website: "https://YMI33.github.io"
+    github: "YMI33"
+    researchgate: "https://www.researchgate.net/profile/Zhiang-Xie"
+    bio_zh: "研究地形与冰盖的气候效应，开发 GREB‑ISM 并从事古气候模拟。"
+    bio_en: "Studies climate impacts of topography and ice sheets; develops GREB‑ISM."
+    cv_link: "/cv/"
+    cv_link_en: "/en/cv/"

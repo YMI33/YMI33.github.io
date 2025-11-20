@@ -14,7 +14,7 @@ I am a postdoctoral researcher at Southern University of Science and Technology.
 
 ## Research interests
 - Climate effects and feedbacks of large ice sheets
-- Development of ice-sheet and Earth system models (GREB‑ISM)
+- Development of ice-sheet and Earth system models ([GREB‑ISM](/en/GREB-ISM/))
 - Quaternary paleoclimate simulations
 - Applications of the Wasserstein distance in climate science
 - Advanced mathematical methods in climate
@@ -22,9 +22,8 @@ I am a postdoctoral researcher at Southern University of Science and Technology.
 
 ## Quick links
 - [CV](/en/cv/)
-- [Publications](/en/publications/)
-- [Teaching](/en/teaching/)
-- [Contact](mailto:xieza@sustech.edu.cn)
+- [Research](/en/publications/)
+- [Teaching & Graduate Topics](/en/teaching/)
 
 ## Contact
 - Email: xieza@sustech.edu.cn

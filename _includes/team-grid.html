@@ -1,0 +1,120 @@
+{% include base_path %}
+{% assign locale_key = page.locale | default: site.locale | default: 'zh-CN' %}
+{% assign labels = site.data.ui-text[locale_key] %}
+<div class="team-list">
+  {% for m in site.data.teams.members %}
+    <div class="team-row">
+      <div class="team-info">
+        <h3 class="team-name">
+          {% if locale_key contains "en" %}
+            {{ m.name_en | default: m.name_zh }}
+          {% else %}
+            {{ m.name_zh | default: m.name_en }}
+          {% endif %}
+        </h3>
+        <p class="team-role">
+          {% if locale_key contains "en" %}
+            {{ m.role_en | default: m.role_zh }}
+          {% else %}
+            {{ m.role_zh | default: m.role_en }}
+          {% endif %}
+        </p>
+        <p class="team-bio">
+          {% if locale_key contains "en" %}
+            {{ m.bio_en | default: m.bio_zh }}
+          {% else %}
+            {{ m.bio_zh | default: m.bio_en }}
+          {% endif %}
+        </p>
+        <div class="team-meta">
+          {% if m.email %}
+            <a href="mailto:{{ m.email }}">{{ labels.email_label }}</a>
+          {% endif %}
+          {% if m.website %}
+            <a href="{{ m.website }}" target="_blank">{{ labels.website_label }}</a>
+          {% endif %}
+          {% if m.github %}
+            {% if m.github contains 'http' %}
+              <a href="{{ m.github }}" target="_blank">GitHub</a>
+            {% else %}
+              <a href="https://github.com/{{ m.github }}" target="_blank">GitHub</a>
+            {% endif %}
+          {% endif %}
+          {% if locale_key contains 'en' %}
+              {% if m.cv_link_en %}
+                <a href="{{ m.cv_link }}" target="_blank">CV</a>
+              {% endif %}
+          {% else %}
+              {% if m.cv_link %}
+                <a href="{{ m.cv_link }}" target="_blank">简历</a>
+              {% endif %}
+          {% endif %}
+        </div>
+      </div>
+      <div class="team-photo">
+        <img src="{{ m.avatar | prepend: "/images/" | prepend: base_path }}" alt="{% if locale_key contains 'en' %}{{ m.name_en | default: m.name_zh }}{% else %}{{ m.name_zh | default: m.name_en }}{% endif %}">
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<style>
+  .team-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .team-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    padding: 16px;
+    background: #fff;
+  }
+  .team-info {
+    flex: 1;
+    min-width: 0;
+  }
+  .team-photo {
+    flex: 0 0 180px;
+  }
+  .team-photo img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+  .team-name {
+    margin: 0 0 8px;
+    font-size: 1.25rem;
+  }
+  .team-role {
+    margin: 0 0 8px;
+    color: #666;
+  }
+  .team-bio {
+    margin: 0 0 12px;
+  }
+  .team-meta a {
+    margin-right: 12px;
+  }
+  @media (max-width: 768px) {
+    .team-row {
+      flex-direction: column;
+      align-items: center;
+      text-align: left;
+    }
+    .team-photo {
+      order: 2;
+      flex: none;
+    }
+    .team-photo img {
+      width: 70%;
+      max-width: 220px;
+      height: auto;
+    }
+  }
+</style>
