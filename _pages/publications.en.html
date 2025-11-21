@@ -105,6 +105,25 @@ locale: en
     .research-image { flex: none; }
     .research-image img { width: 70%; max-width: 280px; height: auto; }
   }
+
+  /* 暗色模式覆盖，提高可读性 */
+  html[data-theme="dark"] .research-section {
+    background: #1f1f1f;
+    border-color: #333;
+  }
+  html[data-theme="dark"] .research-content h2,
+  html[data-theme="dark"] .research-content p {
+    color: #f2f5fa;
+  }
+  html[data-theme="dark"] .research-content a {
+    color: #9ecbff;
+  }
+  html[data-theme="dark"] .research-content a:hover {
+    color: #cfe7ff;
+  }
+  html[data-theme="dark"] .research-image img {
+    border: 1px solid #333;
+  }
 </style>
 
 ## Projects

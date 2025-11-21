@@ -117,4 +117,24 @@
       height: auto;
     }
   }
+
+  /* 暗色模式覆盖，提高卡片对比度与可读性 */
+  html[data-theme="dark"] .team-row {
+    background: #1f1f1f;
+    border-color: #333;
+  }
+  html[data-theme="dark"] .team-name,
+  html[data-theme="dark"] .team-role,
+  html[data-theme="dark"] .team-bio {
+    color: #f2f5fa;
+  }
+  html[data-theme="dark"] .team-meta a {
+    color: #9ecbff;
+  }
+  html[data-theme="dark"] .team-meta a:hover {
+    color: #cfe7ff;
+  }
+  html[data-theme="dark"] .team-photo img {
+    border: 1px solid #333;
+  }
 </style>
