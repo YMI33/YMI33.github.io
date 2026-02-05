@@ -10,7 +10,7 @@ redirect_from:
 ---
 
 # Welcome to my academic homepage
-I am a postdoctoral researcher at Southern University of Science and Technology. I will join the College of Ocean and Earth Science at Xiamen University as an Assistant Professor in early 2026. My work focuses on the multi-scale impacts of topography and ice sheets on the climate system. Let's look up at the sky and mountains together and discuss some cool topics! 
+Hello, my work focuses on the multi-scale impacts of topography and ice sheets on the climate system. Let's look up at the sky and mountains together and discuss some cool topics! 
 
 ## Recruitment
 I am currently recruiting Master's students and hiring research assistants. Related research topics can be found under [Teaching](/en/teaching/). Feel free to email me to discuss.

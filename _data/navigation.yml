@@ -16,6 +16,8 @@ main:
     url: /teaching/
   - title: "GREB‑ISM"
     url: /GREB-ISM/
+  - title: "最优传输应用"
+    url: /optimal_transport/
 
 main_en:
   - title: "Teams"
@@ -26,4 +28,6 @@ main_en:
     url: /en/teaching/
   - title: "GREB‑ISM"
     url: /en/GREB-ISM/
+  - title: "Optimal Transport"
+    url: /en/optimal_transport/
     

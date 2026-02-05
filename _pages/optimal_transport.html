@@ -1,0 +1,137 @@
+---
+layout: archive
+title: "最优传输应用"
+permalink: /optimal_transport/
+author: "Zhiang Xie"
+author_profile: true
+---
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  };
+</script>
+{% include base_path %}
+
+{% capture md_block %}
+
+<figure style="text-align:center;">
+  <img src="{{ "/images/AAS_WSA.png" | prepend: base_path }}" alt="Schematic of the thermal slope effect of ice sheets" style="max-width:100%;height:auto;">
+  <figcaption style="text-align:center;font-size:1em;font-weight:600">最优传输理论与Wasserstein距离</figcaption>
+</figure>
+## 最优传输与 Wasserstein 距离简介
+最优传输理论（Optimal Transport, OT）关注如何以最低代价将“质量”（或概率分布）从一个位置搬运到另一个位置。
+从“用土修筑防御工事，怎样运输最省钱”的实际问题出发，Monge（1781）最开始讨论并研究最优传输理论。
+而到了20 世纪 40 年代，Kantorovich重新表述了这个问题，并通过联合分布（耦合）来描述不同边缘分布之间的质量搬运。
+**Wasserstein 距离**则是在最优传输框架下定义的分布之间的“几何距离”，可定量衡量两组概率分布的差异与相似性。
+与 Kullback–Leibler 散度等描述分布之间关系的指标相比，W 距离是严格的度量，满足度量公理（非负性、同一性、对称性、三角不等式），因此在比较分布时更稳定、更有几何可解释性。
+
+### Wasserstein 距离的物理直观描述
+假设我们要将土堆 $\mu$ 搬运并重塑为另一个形状的土堆 $\nu$：
+- **最小功原则**： 我们希望搬运的质量与路程的乘积之和尽可能小。这一过程的总做功即对应 **Wasserstein 距离**。
+- **质量守恒**： 搬运前后沙子的总量保持一致。因此，**任何满足质量守恒的函数分布（如概率分布、归一化后的密度场）都可以作为研究对象**。
+- **传输方案**： 规划如何搬运每一块质量的详细方案 $M$，在数学上被称为**最优传输方案或最优联合概率分布**。 
+
+从这个例子我们可以看出Wasserstein距离一些应用：
+- **量化分布形态差异**: 土堆差异越大，做工需要越多，所以Wasserstein距离可以描述两个土堆分布之间的差异程度。
+- **路径规划与联合概率分布**：Wasserstein距离伴随的最优传输方案可以帮助我们找到最优的搬运方案(最优联合概率分布)，实现最小化搬运成本(土堆分布差异)。
+- **动力学应用**：除此之外，在流体力学中，Wasserstein 距离与梯度流理论深度耦合。
+
+### Wasserstein距离的计算
+- 理论计算：
+  - 对于μ和ν两个分布来说，Wasserstein 距离基本定义为： \
+$$
+  W(μ,ν) = inf_{\pi ∈ \Pi(μ,ν)}\int_{R_d \times R_d}c(x,y)d\pi(x,y)
+$$ 
+
+    其中$c(x,y)$是从μ上点x到ν上点y的距离，$\pi(x,y)$是μ和ν的联合概率分布。
+  - 对于1D Wasserstein距离，计算可以通过分位数函数实现 \
+  $$
+        W_p = (\int_0^1 |F_μ^{-1} - F_ν^{-1}|^p du)^{\frac{1}{p}} 
+  $$
+
+    其中$F_μ^{-1}$和$F_ν^{-1}$分别是μ和ν的分位数函数。p=1时又称“推土机距离”。
+- Python库（实用）：
+  - SciPy：`scipy.stats.wasserstein_distance` 可直接计算 1D 经验分布的 $W_1$。
+  - Python Optimal Transport（POT）：`ot.emd2` 可计算 EMD（需要给定由 L1 距离构成的代价矩阵）；POT 是高效的精确 OT 求解器之一，但不适合“大样本规模”的 OT 问题。
+
+
+### Wasserstein距离在气候科学中的一部分应用
+- [气候变量分布律的Wasserstein稳定性分析](/publications/aas-wasserstein-stability-2024)
+- [太阳能不稳定指数](/publications/renene-solar-irradiance-stability-2024)
+- ...
+
+
+  {% endcapture %}
+
+{{ md_block | markdownify }}
+
+<!-- 自定义：左文右图卡片版式（与 publications.html 保持一致） -->
+<!-- 
+<div class="research-section">
+  <div class="research-content">
+    <h2>最优传输与气候科学</h2>
+    <p>
+      最优传输（Optimal Transport, OT）为比较概率分布提供了几何上一致且物理可解释的度量体系，
+      其中 Wasserstein 距离可衡量“将一种分布搬运到另一种分布”的最小代价。
+      在气候科学中，数据往往呈现多峰、厚尾与非高斯特征，经典统计指标（如均方误差）常难以全面刻画。
+      借助 OT，我们可以更真实地度量模式与观测在分布层面的差异，服务于评估、同化与不确定性分析。
+    </p>
+  </div>
+  <div class="research-image">
+    <img src="{{ "/images/AAS_WSA.png" | prepend: base_path }}" alt="最优传输在气候领域的应用示意图">
+  </div>
+</div>
+
+
+<style>
+  .research-section {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    padding: 16px;
+    background: #fff;
+    margin-bottom: 20px;
+  }
+  .research-content { flex: 1; min-width: 0; }
+  .research-image { flex: 0 0 240px; }
+  .research-image img {
+    width: 240px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+  @media (max-width: 768px) {
+    .research-section { flex-direction: column; align-items: center; text-align: left; }
+    .research-image { flex: none; }
+    .research-image img { width: 70%; max-width: 280px; height: auto; }
+  }
+
+  /* 暗色模式覆盖（与 publications.html 一致） */
+  html[data-theme="dark"] .research-section {
+    background: #1f1f1f;
+    border-color: #333;
+  }
+  html[data-theme="dark"] .research-content h2,
+  html[data-theme="dark"] .research-content p {
+    color: #f2f5fa;
+  }
+  html[data-theme="dark"] .research-content a {
+    color: #9ecbff;
+  }
+  html[data-theme="dark"] .research-content a:hover {
+    color: #cfe7ff;
+  }
+  html[data-theme="dark"] .research-image img {
+    border: 1px solid #333;
+  }
+</style> -->
