@@ -10,8 +10,8 @@ locale: en
 
 Employment
 ======
-- 2026-        Assistant Professor, Xiamen University
-- 2023–present Postdoctoral Researcher, Southern University of Science and Technology
+- 2026-present        Assistant Professor, Xiamen University
+- 2023–2026  Postdoctoral Researcher, Southern University of Science and Technology
 
 
 Education
@@ -23,7 +23,7 @@ Education
 Projects
 ======
 - NSFC Young Scientists Fund: Thermal slope effects of LGM ice sheets and impacts on surrounding circulation, PI, ongoing
-- China Postdoctoral Science Foundation: Spatiotemporal evolution of Northern Hemisphere ice sheets in late Quaternary deglaciations, PI, ongoing
+- China Postdoctoral Science Foundation: Spatiotemporal evolution of Northern Hemisphere ice sheets in late Quaternary deglaciations, PI, completed
 
 Honors & Awards
 ======

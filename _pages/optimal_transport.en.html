@@ -1,0 +1,139 @@
+---
+layout: archive
+title: "Applications of Optimal Transport"
+permalink: /en/optimal_transport/
+author: "Zhiang Xie"
+author_profile: true
+locale: en
+---
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  };
+</script>
+{% include base_path %}
+
+{% capture md_block %}
+
+<figure style="text-align:center;">
+  <img src="{{ "/images/AAS_WSA.png" | prepend: base_path }}" alt="Schematic of the thermal slope effect of ice sheets" style="max-width:100%;height:auto;">
+  <figcaption style="text-align:center;font-size:1em;font-weight:600">Optimal Transport Theory and Wasserstein Distance</figcaption>
+</figure>
+## Introduction to Optimal Transport and Wasserstein Distance
+Optimal Transport (OT) theory focuses on how to transport "mass" (or probability distributions) from one to another with minimal cost.
+Starting from the practical problem of "how to minimize the cost of transporting soil to build fortifications", Monge (1781) first discussed and studied optimal transport theory.
+In the 1940s, Kantorovich reformulated this problem and described the mass transport between different marginal distributions through a joint distribution (coupling).
+**Wasserstein Distance** is a "geometric distance" between distributions defined under the optimal transport framework, which can quantitatively measure the difference and similarity between two probability distributions.
+Compared with indicators describing the relationship between distributions such as Kullback–Leibler divergence, W distance is a strict metric that satisfies metric axioms (non-negativity, identity, symmetry, triangle inequality), so it is more stable and has more geometric interpretability when comparing distributions.
+
+### Physical Intuition of Wasserstein Distance
+Suppose we want to transport and reshape a pile of soil $\mu$ into another shape $\nu$:
+- **Principle of Least Action**: We hope that the sum of the product of the transported mass and the distance is as small as possible. The total work done in this process corresponds to the **Wasserstein Distance**.
+- **Conservation of Mass**: The total amount of sand remains consistent before and after transportation. Therefore, **any function distribution that satisfies the conservation of mass (such as probability distribution, normalized density field) can be used as a research object**.
+- **Transport Plan**: The detailed plan $M$ of how to transport each piece of mass is mathematically called the **Optimal Transport Plan or Optimal Joint Probability Distribution**.
+
+From this example, we can see some applications of Wasserstein distance:
+- **Quantifying Distribution Shape Differences**: The greater the difference between the piles, the more work is required, so the Wasserstein distance can describe the degree of difference between the distributions of two piles.
+- **Path Planning and Joint Probability Distribution**: The optimal transport scheme accompanying the Wasserstein distance can help us find the optimal transportation scheme (optimal joint probability distribution) to achieve minimized transportation costs (soil pile distribution differences).
+- **Dynamics Applications**: In addition, in fluid mechanics, Wasserstein distance is deeply coupled with gradient flow theory and is used to describe the optimal manifold mapping problem in fluid motion.
+
+### Calculation of Wasserstein Distance
+- Calculation:
+  - For two distributions μ and ν, the Wasserstein distance is defined as: \
+$$
+  W(μ,ν) = inf_{\pi ∈ \Pi(μ,ν)}\int_{R_d \times R_d}c(x,y)d\pi(x,y)
+$$ 
+
+    Where  $c(x,y)$  is the distance from point x on μ to point y on ν, and  $\pi(x,y)$  is the joint probability distribution of μ and ν. 
+  - For 1D Wasserstein distance, the calculation can be implemented through the quantile function \
+  $$
+        W_p = (\int_0^1 |F_μ^{-1} - F_ν^{-1}|^p du)^{\frac{1}{p}} 
+  $$
+
+    Where $F_μ^{-1}$ and $F_ν^{-1}$ are the quantile functions of μ and ν, respectively. When p=1, it is also known as "Earth Mover's Distance".
+- Python Libraries (Practical):
+  - SciPy: `scipy.stats.wasserstein_distance` can directly calculate the $W_1$ of 1D empirical distributions.
+  - Python Optimal Transport (POT): `ot.emd2` can calculate EMD (requires a cost matrix composed of L1 distances); POT is one of the efficient exact OT solvers, but it is not suitable for "large sample size" OT problems.
+
+
+### Some Applications of Wasserstein Distance in Climate Science
+- [Wasserstein Stability Analysis of Climate Variable Distributions](/publications/aas-wasserstein-stability-2024)
+- [Solar Irradiance Stability Index](/publications/renene-solar-irradiance-stability-2024)
+- ...
+
+## References
+Figalli, A., & Glaudo, F. (2021). An invitation to optimal transport, Wasserstein distances, and gradient flows.
+  {% endcapture %}
+
+{{ md_block | markdownify }}
+
+<!-- Custom: Left text right image card layout (consistent with publications.html) -->
+<!-- 
+<div class="research-section">
+  <div class="research-content">
+    <h2>Optimal Transport and Climate Science</h2>
+    <p>
+      Optimal Transport (OT) provides a geometrically consistent and physically interpretable metric system for comparing probability distributions,
+      where Wasserstein distance measures the minimal cost of "transporting one distribution to another".
+      In climate science, data often presents multi-modal, heavy-tailed, and non-Gaussian characteristics, which classical statistical indicators (such as mean squared error) often fail to fully characterize.
+      With OT, we can more realistically measure the differences between models and observations at the distribution level, serving assessment, assimilation, and uncertainty analysis.
+    </p>
+  </div>
+  <div class="research-image">
+    <img src="{{ "/images/AAS_WSA.png" | prepend: base_path }}" alt="Schematic of Optimal Transport applications in climate field">
+  </div>
+</div>
+
+
+<style>
+  .research-section {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    padding: 16px;
+    background: #fff;
+    margin-bottom: 20px;
+  }
+  .research-content { flex: 1; min-width: 0; }
+  .research-image { flex: 0 0 240px; }
+  .research-image img {
+    width: 240px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+  @media (max-width: 768px) {
+    .research-section { flex-direction: column; align-items: center; text-align: left; }
+    .research-image { flex: none; }
+    .research-image img { width: 70%; max-width: 280px; height: auto; }
+  }
+
+  /* Dark mode override (consistent with publications.html) */
+  html[data-theme="dark"] .research-section {
+    background: #1f1f1f;
+    border-color: #333;
+  }
+  html[data-theme="dark"] .research-content h2,
+  html[data-theme="dark"] .research-content p {
+    color: #f2f5fa;
+  }
+  html[data-theme="dark"] .research-content a {
+    color: #9ecbff;
+  }
+  html[data-theme="dark"] .research-content a:hover {
+    color: #cfe7ff;
+  }
+  html[data-theme="dark"] .research-image img {
+    border: 1px solid #333;
+  }
+</style> -->
