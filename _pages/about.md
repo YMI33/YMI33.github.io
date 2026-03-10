@@ -27,6 +27,6 @@ redirect_from:
 - [教学与研究生方向](/teaching/)
 
 ## 联系方式
-- 邮箱：xieza@sustech.edu.cn
+- 邮箱：zaxie@xmu.edu.cn
 - GitHub：[YMI33](https://github.com/YMI33)
 - ResearchGate：[Zhiang Xie](https://www.researchgate.net/profile/Zhiang-Xie)
