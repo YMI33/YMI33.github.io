@@ -29,6 +29,6 @@ I am currently recruiting Master's students and hiring research assistants. Rela
 - [Teaching & Graduate Topics](/en/teaching/)
 
 ## Contact
-- Email: xieza@sustech.edu.cn
+- Email: zaxie@xmu.edu.cn
 - GitHub: [YMI33](https://github.com/YMI33)
 - ResearchGate: [Zhiang Xie](https://www.researchgate.net/profile/Zhiang-Xie)
