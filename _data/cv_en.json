@@ -1,30 +1,40 @@
 {
   "basics": {
     "name": "Zhiang Xie",
-    "email": "xieza@sustech.edu.cn",
-    "website": "https://academicpages.github.io",
+    "label": "Assistant Professor",
+    "email": "zaxie@xmu.edu.cn",
+    "website": "https://YMI33.github.io",
     "summary": "Research focuses on climatic effects of topography and ice sheets. Independently developed the GREB‑ISM ice-sheet module for paleoclimate simulations, proposing the 'thermal slope effect of ice sheets' and its dynamics.",
     "location": {
       "address": "",
       "postalCode": "",
-      "city": "Shenzhen",
+      "city": "Xiamen",
       "countryCode": "CN",
-      "region": ""
+      "region": "Fujian"
     },
     "profiles": [
       { "network": "Google Scholar", "username": "", "url": "https://scholar.google.com/citations?user=PS_CX0AAAAAJ" },
-      { "network": "ORCID", "username": "", "url": "https://orcid.org/yourorcidurl" },
+      { "network": "ORCID", "username": "", "url": "" },
       { "network": "ResearchGate", "username": "", "url": "https://www.researchgate.net/profile/Zhiang-Xie" },
       { "network": "GitHub", "username": "YMI33", "url": "https://github.com/YMI33" }
     ]
   },
   "work": [
     {
-      "company": "Southern University of Science and Technology (SUSTech)",
+      "company": "College of Ocean and Earth Sciences, Xiamen University",
+      "position": "Assistant Professor",
+      "website": "",
+      "startDate": "2026-02",
+      "endDate": "",
+      "summary": "Tenure-track, Fujian Province High-Level Talent (Category C)",
+      "highlights": []
+    },
+    {
+      "company": "Department of Earth and Space Sciences, Southern University of Science and Technology (SUSTech)",
       "position": "Postdoctoral Fellow",
       "website": "",
-      "startDate": "2023",
-      "endDate": "",
+      "startDate": "2022-12",
+      "endDate": "2026-01",
       "summary": "",
       "highlights": []
     }
@@ -33,16 +43,16 @@
     {
       "institution": "Monash University, Australia",
       "area": "Atmospheric Sciences",
-      "studyType": "",
+      "studyType": "Ph.D.",
       "startDate": "2019",
       "endDate": "2022",
       "gpa": null,
       "courses": []
     },
     {
-      "institution": "Institute of Atmospheric Physics, Chinese Academy of Sciences",
-      "area": "M.Sc. Physical Oceanography",
-      "studyType": "",
+      "institution": "Institute of Atmospheric Physics, Chinese Academy of Sciences / UCAS",
+      "area": "Physical Oceanography",
+      "studyType": "M.Sc.",
       "startDate": "2014",
       "endDate": "2018",
       "gpa": null,
@@ -50,8 +60,8 @@
     },
     {
       "institution": "Yunnan University",
-      "area": "B.Sc. Atmospheric Sciences",
-      "studyType": "",
+      "area": "Atmospheric Sciences",
+      "studyType": "B.Sc.",
       "startDate": "2010",
       "endDate": "2014",
       "gpa": null,
@@ -60,21 +70,28 @@
   ],
   "projects": [
     {
-      "title": "NSFC Young Scientists Fund: Thermal slope effects of large ice sheets during the Last Glacial Maximum and impacts on surrounding atmospheric circulation",
+      "title": "NSFC Young Scientists Fund: Thermal slope effects of LGM ice sheets and impacts on surrounding circulation",
       "role": "Principal Investigator",
-      "status": "In progress",
-      "period": ""
+      "status": "Active",
+      "period": "2025-2027"
     },
     {
-      "title": "China Postdoctoral Science Foundation (74th General Grant): Simulating the spatiotemporal evolution of Northern Hemisphere ice sheets during late Quaternary deglaciation",
+      "title": "National Key R&D Program: Development of the shared open-source Earth system model CAS-ESM",
+      "role": "Project Core Member",
+      "status": "Active",
+      "period": "2024-2029"
+    },
+    {
+      "title": "China Postdoctoral Science Foundation (74th General Grant): Spatiotemporal evolution of Northern Hemisphere ice sheets during late Quaternary deglaciation",
       "role": "Principal Investigator",
-      "status": "In progress",
-      "period": ""
+      "status": "Completed",
+      "period": "2024-2025"
     }
   ],
   "honors": [
     "First cohort awardee of the Ministry of Education Postdoctoral Global Talent Program",
-    "Guangdong Province Overseas Postdoctoral Talent",
+    "Guangdong Province Overseas Postdoctoral Talent Support Program",
+    "Fujian Province High-Level Talent (Category C)",
     "Member, Climate and Environment Committee, China Society for Industrial and Applied Mathematics"
   ]
 }

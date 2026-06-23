@@ -29,7 +29,7 @@ Honors & Awards
 ======
 - First cohort of MoE overseas postdoctoral talent program
 - Guangdong overseas postdoctoral talent
-- Committee member, SIAM Climate & Environment Subcommittee (China)
+- Committee member, SIAM Climate & Environment Committee (China)
 
 Selected Publications
 ============
