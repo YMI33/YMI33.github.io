@@ -68,6 +68,15 @@
       "courses": []
     }
   ],
+  "teaching": [
+    {
+      "course": "Quantitative Analysis of Marine Geography",
+      "institution": "Xiamen University",
+      "date": "2026",
+      "role": "Instructor",
+      "description": "Undergraduate elective for Marine Science majors. Uses quantitative geography as its core toolkit to teach quantitative analysis, spatial modeling, and statistical methods for marine geographic phenomena and processes, covering the foundations of quantitative geography, spatial statistics and inference, identification and classification of marine variables, and an introduction to artificial intelligence methods, and concluding with integrated case studies on typical marine geology and environmental problems."
+    }
+  ],
   "projects": [
     {
       "title": "NSFC Young Scientists Fund: Thermal slope effects of LGM ice sheets and impacts on surrounding circulation",

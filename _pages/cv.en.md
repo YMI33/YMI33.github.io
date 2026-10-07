@@ -25,6 +25,10 @@ Projects
 - NSFC Young Scientists Fund: Thermal slope effects of LGM ice sheets and impacts on surrounding circulation, PI, ongoing
 - China Postdoctoral Science Foundation: Spatiotemporal evolution of Northern Hemisphere ice sheets in late Quaternary deglaciations, PI, completed
 
+Teaching
+======
+- Quantitative Analysis of Marine Geography, undergraduate elective (Marine Science), Xiamen University
+
 Honors & Awards
 ======
 - First cohort of MoE overseas postdoctoral talent program
