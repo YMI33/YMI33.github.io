@@ -1,68 +1,61 @@
 {% include base_path %}
 {% assign locale_key = page.locale | default: site.locale | default: 'zh-CN' %}
 {% assign labels = site.data.ui-text[locale_key] %}
+{% assign is_en = false %}
+{% if locale_key contains "en" %}{% assign is_en = true %}{% endif %}
+{% assign groups = site.data.teams.groups %}
+{% assign members = site.data.teams.members %}
+{% assign known_keys = groups | map: "key" %}
+{% assign known = members | where_exp: "m", "known_keys contains m.group" %}
+
 <div class="team-list">
-  {% for m in site.data.teams.members %}
-    <div class="team-row">
-      <div class="team-info">
-        <h3 class="team-name">
-          {% if locale_key contains "en" %}
-            {{ m.name_en | default: m.name_zh }}
-          {% else %}
-            {{ m.name_zh | default: m.name_en }}
-          {% endif %}
-        </h3>
-        <p class="team-role">
-          {% if locale_key contains "en" %}
-            {{ m.role_en | default: m.role_zh }}
-          {% else %}
-            {{ m.role_zh | default: m.role_en }}
-          {% endif %}
-        </p>
-        <p class="team-bio">
-          {% if locale_key contains "en" %}
-            {{ m.bio_en | default: m.bio_zh }}
-          {% else %}
-            {{ m.bio_zh | default: m.bio_en }}
-          {% endif %}
-        </p>
-        <div class="team-meta">
-          {% if m.email %}
-            <a href="mailto:{{ m.email }}">{{ labels.email_label }}</a>
-          {% endif %}
-          {% if m.website %}
-            <a href="{{ m.website }}" target="_blank">{{ labels.website_label }}</a>
-          {% endif %}
-          {% if m.github %}
-            {% if m.github contains 'http' %}
-              <a href="{{ m.github }}" target="_blank">GitHub</a>
-            {% else %}
-              <a href="https://github.com/{{ m.github }}" target="_blank">GitHub</a>
-            {% endif %}
-          {% endif %}
-          {% if locale_key contains 'en' %}
-              {% if m.cv_link_en %}
-                <a href="{{ m.cv_link }}" target="_blank">CV</a>
-              {% endif %}
-          {% else %}
-              {% if m.cv_link %}
-                <a href="{{ m.cv_link }}" target="_blank">简历</a>
-              {% endif %}
-          {% endif %}
-        </div>
-      </div>
-      <div class="team-photo">
-        <img src="{{ m.avatar | prepend: "/images/" | prepend: base_path }}" alt="{% if locale_key contains 'en' %}{{ m.name_en | default: m.name_zh }}{% else %}{{ m.name_zh | default: m.name_en }}{% endif %}">
-      </div>
-    </div>
+  {% for g in groups %}
+    {% assign gmembers = members | where: "group", g.key %}
+    {% if g.key == "alumni" %}
+      {% assign gmembers = gmembers | sort: "end" | reverse %}
+    {% else %}
+      {% assign gmembers = gmembers | sort: "start" %}
+    {% endif %}
+    {% if gmembers.size > 0 %}
+      <section class="team-group">
+        <h2 class="team-group-title">{% if is_en %}{{ g.en | default: g.zh }}{% else %}{{ g.zh | default: g.en }}{% endif %}</h2>
+        {% for m in gmembers %}
+          {% include team-member.html m=m is_en=is_en cohort=g.cohort labels=labels %}
+        {% endfor %}
+      </section>
+    {% endif %}
   {% endfor %}
+
+  {% comment %} 兜底：group 写错或漏填的成员落到这里，不会被悄悄丢掉 {% endcomment %}
+  {% if members.size > known.size %}
+    <section class="team-group">
+      <h2 class="team-group-title team-group-title--warn">{% if is_en %}Others{% else %}其他成员{% endif %}</h2>
+      {% for m in members %}
+        {% unless known_keys contains m.group %}
+          {% include team-member.html m=m is_en=is_en cohort=false labels=labels %}
+        {% endunless %}
+      {% endfor %}
+    </section>
+  {% endif %}
 </div>
 
 <style>
   .team-list {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 8px;
+  }
+  .team-group-title {
+    margin: 28px 0 16px;
+    padding-bottom: 6px;
+    font-size: 1.4rem;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  .team-group-title--warn {
+    color: #b03030;
+  }
+  .team-group .team-row + .team-row {
+    margin-top: 16px;
   }
   .team-row {
     display: flex;
@@ -95,8 +88,15 @@
     margin: 0 0 8px;
     color: #666;
   }
+  .team-period {
+    color: #888;
+  }
   .team-bio {
     margin: 0 0 12px;
+  }
+  .team-next {
+    margin: 0 0 12px;
+    color: #666;
   }
   .team-meta a {
     margin-right: 12px;
@@ -123,10 +123,21 @@
     background: #1f1f1f;
     border-color: #333;
   }
+  html[data-theme="dark"] .team-group-title {
+    color: #f2f5fa;
+    border-bottom-color: #333;
+  }
+  html[data-theme="dark"] .team-group-title--warn {
+    color: #ff8f8f;
+  }
   html[data-theme="dark"] .team-name,
   html[data-theme="dark"] .team-role,
-  html[data-theme="dark"] .team-bio {
+  html[data-theme="dark"] .team-bio,
+  html[data-theme="dark"] .team-next {
     color: #f2f5fa;
+  }
+  html[data-theme="dark"] .team-period {
+    color: #a8b0bb;
   }
   html[data-theme="dark"] .team-meta a {
     color: #9ecbff;

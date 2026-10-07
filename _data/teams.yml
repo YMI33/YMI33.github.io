@@ -1,9 +1,61 @@
+# 团队成员
+# ============================================================
+# 日常维护只有两件事：
+#
+#   【新生加入】在 members: 下面加一条，group 填 phd / master / undergrad
+#   【学生毕业】改三处，条目不要删：
+#       1. group  改成 alumni
+#       2. end    填毕业年月，例如 "2029-06"
+#       3. next_zh / next_en  填毕业去向
+#
+# 字段说明
+#   id       必填，唯一标识，用拼音。稳定主键，定了就别再改
+#   group    必填，必须是下面 groups 里出现过的 key，写错会掉进「其他成员」栏
+#   start    入学/入职年月，"YYYY-MM"。学生填入学年月（卡片显示为「2026 级」），
+#            不是加入课题组的时间；本科生转专业之类的情况按学籍年级填
+#            漏填不会报错，只是卡片排到最前且不显示年份
+#   end      毕业/离开年月，在读成员留空字符串 ""
+#   avatar   照片文件名（放在 images/ 目录下）。留空则不显示照片，不会出现破图
+#   bio_*    研究方向，一句话
+#   next_*   毕业去向，只有 alumni 用
+#
+# 排序规则（模板自动处理，不用手动摆顺序）
+#   alumni 之外：按 start 升序，高年级在前
+#   alumni：按 end 降序，最近毕业的在前
+#
+# 注意：本文件在公开仓库里，写进来就等于公开。学生邮箱、电话等私人联系方式
+#       不要放这里，需要记录请记在自己的本地文档中。
+# ============================================================
+
+groups:
+  - key: pi
+    zh: "导师"
+    en: "Principal Investigator"
+  - key: phd
+    zh: "博士研究生"
+    en: "PhD Students"
+    cohort: true
+  - key: master
+    zh: "硕士研究生"
+    en: "Master's Students"
+    cohort: true
+  - key: undergrad
+    zh: "本科生"
+    en: "Undergraduate Researchers"
+    cohort: true
+  - key: alumni
+    zh: "已毕业"
+    en: "Alumni"
+
 members:
   - id: zhiang-xie
+    group: pi
     name_zh: "谢志昂"
     name_en: "Zhiang Xie"
     role_zh: "厦门大学（助理教授）"
     role_en: "Xiamen University (Asst. Prof.)"
+    start: "2026"
+    end: ""
     avatar: "zhiang_xie.png"
     email: "zaxie@xmu.edu.cn"
     website: "https://YMI33.github.io"
@@ -13,3 +65,55 @@ members:
     bio_en: "Studies climate impacts of topography and ice sheets; develops GREB‑ISM."
     cv_link: "/cv/"
     cv_link_en: "/en/cv/"
+
+  - id: meiping-zhang
+    group: master
+    name_zh: "张美萍"
+    name_en: "Meiping Zhang"
+    role_zh: "硕士研究生"
+    role_en: "Master's Student"
+    start: "2026-09"
+    end: ""
+    avatar: ""
+    bio_zh: "研究方向：地表风速变化与风能。"
+    bio_en: "Research: surface wind speed variability and wind energy, using the Wasserstein distance."
+
+  - id: ziyi-fang
+    group: master
+    name_zh: "方子懿"
+    name_en: "Ziyi Fang"
+    role_zh: "硕士研究生"
+    role_en: "Master's Student"
+    start: "2026-09"
+    end: ""
+    avatar: ""
+    bio_zh: "研究方向：概率密度函数的分解及气候应用。"
+    bio_en: "Research: decomposition of probability density functions and climate applications."
+
+  - id: cunjun-xue
+    group: undergrad
+    name_zh: "薛存峻"
+    name_en: "Cunjun Xue"
+    role_zh: "本科生"
+    role_en: "Undergraduate Researcher"
+    start: "2024-09"
+    end: ""
+    avatar: ""
+    bio_zh: "研究方向：潜温融化参数化方案与 GREB‑ISM 冰盖模式。"
+    bio_en: "Research: latent-temperature melt parameterization and the GREB‑ISM ice-sheet model."
+
+  # ---------------- 下面是毕业后改成 alumni 的样子，照这个改就行 ----------------
+  #
+  # - id: san-zhang
+  #   group: alumni            # phd / master / undergrad / alumni
+  #   name_zh: "张三"
+  #   name_en: "San Zhang"
+  #   role_zh: "硕士研究生"
+  #   role_en: "Master's Student"
+  #   start: "2026-09"         # 入学年月，卡片上显示为「2026 级」
+  #   end: "2029-06"           # 毕业后填上，卡片自动变成「2026–2029」
+  #   avatar: ""
+  #   bio_zh: "研究方向：……"
+  #   bio_en: "Research: ..."
+  #   next_zh: "前往 XX 大学攻读博士"
+  #   next_en: "PhD at XX University"

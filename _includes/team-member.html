@@ -1,0 +1,66 @@
+{% include base_path %}
+{% assign m = include.m %}
+{% assign is_en = include.is_en %}
+{% assign labels = include.labels %}
+{% assign sy = "" %}
+{% if m.start %}{% assign sy = m.start | slice: 0, 4 %}{% endif %}
+{% assign ey = "" %}
+{% if m.end %}{% assign ey = m.end | slice: 0, 4 %}{% endif %}
+
+<div class="team-row">
+  <div class="team-info">
+    <h3 class="team-name">
+      {% if is_en %}{{ m.name_en | default: m.name_zh }}{% else %}{{ m.name_zh | default: m.name_en }}{% endif %}
+    </h3>
+    <p class="team-role">
+      {% if is_en %}{{ m.role_en | default: m.role_zh }}{% else %}{{ m.role_zh | default: m.role_en }}{% endif %}
+      {% if ey != "" %}
+        <span class="team-period">· {{ sy }}–{{ ey }}</span>
+      {% elsif include.cohort and sy != "" %}
+        <span class="team-period">{% if is_en %}· class of {{ sy }}{% else %}· {{ sy }} 级{% endif %}</span>
+      {% endif %}
+    </p>
+    {% if m.bio_zh or m.bio_en %}
+    <p class="team-bio">
+      {% if is_en %}{{ m.bio_en | default: m.bio_zh }}{% else %}{{ m.bio_zh | default: m.bio_en }}{% endif %}
+    </p>
+    {% endif %}
+    {% if m.next_zh or m.next_en %}
+    <p class="team-next">
+      {% if is_en %}<strong>Next:</strong> {{ m.next_en | default: m.next_zh }}{% else %}<strong>毕业后去向：</strong>{{ m.next_zh | default: m.next_en }}{% endif %}
+    </p>
+    {% endif %}
+    <div class="team-meta">
+      {% if m.email %}
+        <a href="mailto:{{ m.email }}">{{ labels.email_label }}</a>
+      {% endif %}
+      {% if m.website %}
+        <a href="{{ m.website }}" target="_blank">{{ labels.website_label }}</a>
+      {% endif %}
+      {% if m.github %}
+        {% if m.github contains 'http' %}
+          <a href="{{ m.github }}" target="_blank">GitHub</a>
+        {% else %}
+          <a href="https://github.com/{{ m.github }}" target="_blank">GitHub</a>
+        {% endif %}
+      {% endif %}
+      {% if m.researchgate %}
+        <a href="{{ m.researchgate }}" target="_blank">ResearchGate</a>
+      {% endif %}
+      {% if is_en %}
+        {% if m.cv_link_en %}
+          <a href="{{ m.cv_link }}" target="_blank">CV</a>
+        {% endif %}
+      {% else %}
+        {% if m.cv_link %}
+          <a href="{{ m.cv_link }}" target="_blank">简历</a>
+        {% endif %}
+      {% endif %}
+    </div>
+  </div>
+  {% if m.avatar and m.avatar != "" %}
+  <div class="team-photo">
+    <img src="{{ m.avatar | prepend: "/images/" | prepend: base_path }}" alt="{% if is_en %}{{ m.name_en | default: m.name_zh }}{% else %}{{ m.name_zh | default: m.name_en }}{% endif %}">
+  </div>
+  {% endif %}
+</div>
